@@ -55,3 +55,18 @@ def performance_report():
     metrics = {
         "latency_ms": 12.4,
         "throughput_tx": 340,
+        "status": "optimal"
+    }
+    print("System metrics:", json.dumps(metrics))
+
+def footer():
+    print("End of secure contract simulation")
+
+def main():
+    vault, rhash, sig = simulate_trading_flow()
+    audit(vault, rhash)
+    performance_report()
+    footer()
+
+if __name__ == "__main__":
+    main()
